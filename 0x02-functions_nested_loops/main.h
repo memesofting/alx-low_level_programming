@@ -1,6 +1,1 @@
-char _putchar(char words[])
-{
-	char text;
-	text = "_putchar";
-	return (text);
-}
+int _putchar(char c)
