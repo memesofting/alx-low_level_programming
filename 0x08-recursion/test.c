@@ -16,7 +16,15 @@ int _strlen_recursion(char *s)
 	if (s[i] == '\0')
 		return (i);
 	else
-		++i;
-	_strlen_recursion(s + 1);
-	return (i);
+		i++;
+	_strlen_recursion(s + i);
+}
+
+int main(void)
+{
+    int n;
+
+    n = _strlen_recursion("Corbin Coleman");
+    printf("%d\n", n);
+    return (0);
 }
