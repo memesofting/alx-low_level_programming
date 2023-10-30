@@ -2,7 +2,7 @@
 #include <ctype.h>
 
 /**
- * main - entry point
+ * _isupper - entry point
  * @c: character to be checked
  *
  * Return: Always 1 (Success)
