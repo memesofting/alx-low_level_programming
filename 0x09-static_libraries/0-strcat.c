@@ -3,7 +3,9 @@
 
 /**
  * _strcat - concatenates two strings
- * @c: character to check
+ * @dest: first string
+ * @src: second string
+ *
  * Return: pointer (Success)
  */
 

@@ -5,6 +5,7 @@
  * _memcpy - copies memory area
  * @dest: memory to paste to
  * @src: memory to copy
+ * @n: no of bytes to copy
  *
  * Return: Always **dest (Success)
  */

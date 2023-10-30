@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * main - entry point
+ * _strchr - checks for character
  * @c: character to be checked
  * @s: pointer to character
  *
