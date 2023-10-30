@@ -1,12 +1,13 @@
-#include <stdio.h>
+#include "main.h"
+#include <stdlib.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _atoi - converts type to int
+ * @s: string to convert
+ *
+ * Return: converted value
  */
 
-int _isupper(int c);
+int _atoi(char *s)
 {
-	return (0);
 }

@@ -1,12 +1,17 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _puts - prints string followed by a new line
+ * @str: string to be printed to stdout
+ *
+ * Return: void (Success)
  */
-
-int _isupper(int c);
+void _puts(char *str)
 {
-	return (0);
+	while (*str != '\0')
+	{
+		_putchar(*str);
+		str++;
+	}
+	_putchar('\n');
 }

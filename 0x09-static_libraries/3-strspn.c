@@ -1,12 +1,14 @@
-#include <stdio.h>
+#include "main.h"
+#include <string.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _strspn - gets length of substring
+ * @s: string to search
+ * @accept: substring
+ *
+ * Return: number of bytes (Success)
  */
 
-int _isupper(int c);
+unsigned int _strspn(char *s, char *accept)
 {
-	return (0);
 }

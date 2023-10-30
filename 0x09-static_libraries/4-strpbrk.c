@@ -1,12 +1,14 @@
-#include <stdio.h>
+#include "main.h"
+#include <string.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _strpbrk - searches a string for any set of bytes
+ * @s: string searched for
+ * @accept: string to search
+ *
+ * Return: pointer to bytes in s
  */
 
-int _isupper(int c);
+char *_strpbrk(char *s, char *accept)
 {
-	return (0);
 }

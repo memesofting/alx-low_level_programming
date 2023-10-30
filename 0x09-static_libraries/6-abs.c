@@ -1,12 +1,13 @@
-#include <stdio.h>
+#include "main.h"
+#include <stdlib.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _abs - prints absolute values
+ * @r: number whose absolute value is printed
+ *
+ * Return: Absolute value of number
  */
 
-int _isupper(int c);
+int _abs(int r)
 {
-	return (0);
 }

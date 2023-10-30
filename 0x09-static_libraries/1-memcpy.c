@@ -1,12 +1,16 @@
-#include <stdio.h>
+#include "main.h"
+#include <string.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _memcpy - copies memory area
+ * @dest: memory to paste to
+ * @src: memory to copy
+ *
+ * Return: Always **dest (Success)
  */
 
-int _isupper(int c);
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	return (0);
+	memcpy(dest, src, n);
+	return (dest);
 }

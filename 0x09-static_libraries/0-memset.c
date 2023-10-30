@@ -1,12 +1,17 @@
 #include <stdio.h>
+#include <string.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _memset - fills memmory with constant byte
+ * @s: pointer to memory area
+ * @b: constant byte
+ * @n: no of bytes
+ *
+ * Return: **p
  */
 
-int _isupper(int c);
+char *_memset(char *s, char b, unsigned int n)
 {
+	memset(s, b, n);
 	return (0);
 }

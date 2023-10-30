@@ -1,12 +1,21 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _strlen - returns length of string
+ * @s: string pointer
+ *
+ * Return: len (Success)
  */
 
-int _isupper(int c);
+int _strlen(char *s)
 {
-	return (0);
+	int len;
+
+	len = 0;
+	while (*s != '\0')
+	{
+		len++;
+		s++;
+	}
+	return (len);
 }

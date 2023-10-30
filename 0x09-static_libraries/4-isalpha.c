@@ -1,12 +1,14 @@
-#include <stdio.h>
+#include "main.h"
+#include <ctype.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _isalpha - check for alphabet
+ * @c: value to be check
+ *
+ * Return: 1 (Success)
+ * else: 0
  */
 
-int _isupper(int c);
+int _isalpha(int c)
 {
-	return (0);
 }

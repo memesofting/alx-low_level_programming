@@ -1,12 +1,14 @@
-#include <stdio.h>
+#include "main.h"
+#include <string.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _strcpy - copies strings
+ * @dest: pointer to buffer
+ * @src: string to be copied
+ *
+ * Return: pointer to char
  */
 
-int _isupper(int c);
+char *_strcpy(char *dest, char *src)
 {
-	return (0);
 }

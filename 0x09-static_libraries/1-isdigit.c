@@ -1,12 +1,16 @@
 #include <stdio.h>
+#include <ctype.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _isdigit - checks for digits
+ * @c: digit to check
+ * Return: Always 1 (Success)
  */
 
-int _isupper(int c);
+int _isdigit(int c)
 {
-	return (0);
+	if (isdigit(c))
+		return (1);
+	else
+		return (0);
 }

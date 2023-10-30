@@ -1,12 +1,17 @@
-#include <stdio.h>
+#include "main.h"
+#include <string.h>
 
 /**
- * main - entry point
- * @c: character to check
+ * _strncpy - copies strings
+ * @dest: first string
+ * @src: second string
+ * @n: src bytes
+ *
  * Return: Always 0
  */
 
-int _isupper(int c);
+char *_strncpy(char *dest, char *src, int n)
 {
-	return (0);
+	strncpy(dest, src, n);
+	return (dest);
 }

@@ -1,12 +1,27 @@
-#include <stdio.h>
+#include <string.h>
+#include "main.h"
 
 /**
  * main - entry point
- * @c: character to check
- * Return: Always 0
+ * @c: character to be checked
+ * @s: pointer to character
+ *
+ * Return: s (Success)
+ * else: null
  */
 
-int _isupper(int c);
+char *_strchr(char *s, char c)
 {
-	return (0);
+	while (*s != c && *s != '\0')
+	{
+		s++;
+	}
+	if (*s == c)
+	{
+		return (s);
+	}
+	else
+	{
+		return (NULL);
+	}
 }

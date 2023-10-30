@@ -1,12 +1,17 @@
 #include <stdio.h>
+#include <ctype.h>
 
 /**
  * main - entry point
- * @c: character to check
- * Return: Always 0
+ * @c: character to be checked
+ *
+ * Return: Always 1 (Success)
  */
 
-int _isupper(int c);
+int _isupper(int c)
 {
-	return (0);
+	if (isupper(c))
+		return (1);
+	else
+		return (0);
 }

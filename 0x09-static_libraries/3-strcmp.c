@@ -1,12 +1,20 @@
-#include <stdio.h>
+#include "main.h"
+#include <string.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _strcmp - copares two strings
+ * @s1: first string
+ * @s2: second string
+ *
+ * Return: 0 if s1 = s2
+ * else if: s1 > s2 0
+ * else: -1
  */
 
-int _isupper(int c);
+int _strcmp(char *s1, char *s2)
 {
-	return (0);
+	int result;
+
+	result = strcmp(s1, s2);
+	return (result);
 }

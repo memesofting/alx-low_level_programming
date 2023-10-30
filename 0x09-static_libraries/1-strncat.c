@@ -1,12 +1,17 @@
-#include <stdio.h>
+#include "main.h"
+#include <string.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _strncat - concatenates two strings
+ * @dest: first string
+ * @src: second string
+ * @n: src bytes
+ *
+ * Return: pointer (Success)
  */
 
-int _isupper(int c);
+char *_strncat(char *dest, char *src, int n)
 {
-	return (0);
+	strncat(dest, src, n);
+	return (dest);
 }

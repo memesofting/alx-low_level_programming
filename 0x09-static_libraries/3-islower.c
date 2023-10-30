@@ -1,12 +1,18 @@
-#include <stdio.h>
+#include "main.h"
+#include <ctype.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _islower - checks for lower case
+ * @c: int type for testing _islower
+ *
+ * Return: Always 1 on succes
+ * Else 0
  */
 
-int _isupper(int c);
+int _islower(int c)
 {
-	return (0);
+	if (islower(c))
+		return (1);
+	else
+		return (0);
 }

@@ -1,12 +1,14 @@
 #include <stdio.h>
+#include <string.h>
 
 /**
- * main - entry point
+ * _strcat - concatenates two strings
  * @c: character to check
- * Return: Always 0
+ * Return: pointer (Success)
  */
 
-int _isupper(int c);
+char *_strcat(char *dest, char *src)
 {
-	return (0);
+	strcat(dest, src);
+	return (dest);
 }

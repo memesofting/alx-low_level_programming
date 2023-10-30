@@ -1,12 +1,15 @@
-#include <stdio.h>
+#include "main.h"
+#include <string.h>
 
 /**
- * main - entry point
- * @c: character to check
- * Return: Always 0
+ * _strstr - locates substring
+ * @haystack: string to search from
+ * @needle: string to search
+ *
+ * Return: *needle (Success)
+ * else: NULL
  */
 
-int _isupper(int c);
+char *_strstr(char *haystack, char *needle)
 {
-	return (0);
 }
