@@ -1,0 +1,64 @@
+
+========== 0-isupper.c ==========
+_isupper
+
+========== 0-memset.c ==========
+_memset
+
+========== 0-strcat.c ==========
+_strcat
+
+========== 1-isdigit.c ==========
+_isdigit
+
+========== 1-memcpy.c ==========
+_memcpy
+
+========== 1-strncat.c ==========
+_strncat
+
+========== 100-atoi.c ==========
+_atoi
+
+========== 2-strchr.c ==========
+_strchr
+
+========== 2-strlen.c ==========
+_strlen
+
+========== 2-strncpy.c ==========
+_strncpy
+
+========== 3-islower.c ==========
+_islower
+
+========== 3-puts.c ==========
+_puts
+
+========== 3-strcmp.c ==========
+_strcmp
+
+========== 3-strspn.c ==========
+_strspn
+
+========== 4-isalpha.c ==========
+_isalpha
+
+========== 4-strpbrk.c ==========
+_strpbrk
+
+========== 5-strstr.c ==========
+_strstr
+
+========== 6-abs.c ==========
+_abs
+
+========== 9-strcpy.c ==========
+_strcpy
+
+========== _putchar.c ==========
+_putchar
+
+========== main.c ==========
+main.c:5: WARNING: line over 80 characters (91)
+total: 0 errors, 1 warnings, 7 lines checked
