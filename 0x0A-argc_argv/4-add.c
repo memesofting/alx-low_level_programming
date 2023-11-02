@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	else
 		for (i = 1; i < argc; i++)
 		{
-			if (typeof(argv[i]) = int)
+			if (!atoi(argv[i]))
 			{
 				printf("error\n");
 				return (1);
