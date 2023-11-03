@@ -11,13 +11,15 @@
 
 void *malloc_checked(unsigned int b)
 {
-	unsigned int *location;
+	void *location;
 
-	location = &b;
-	while (location)
+	location = malloc(b);
+	if ( location == NULL)
 	{
-		location = malloc(sizeof(unsigned int));
+		exit(98);
+	}
+	else
+	{
 		return (location);
 	}
-	return (location);
 }
