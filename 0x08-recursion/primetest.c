@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include "main.h"
 
 /**
@@ -17,26 +18,24 @@ int is_prime_number(int n)
 	{
 		return (0);
 	}
-	if (n == i)
+	else if (n == i)
 	{
 		return (1);
 	}
-	if (n % i == 0)
+	else if (n % i == 0)
 	{
 		return (0);
 	}
-	i++;
-	return (is_prime_number(n));
+	else if (i >= n / 2)
+	{
+		return (1);
+	}
+	else
+	{
+		i += 1;
+		return (is_prime_number(n));
+	}
 }
-6-main.c
-#include "main.h"
-#include <stdio.h>
-
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
 int main(void)
 {
 	int r;
