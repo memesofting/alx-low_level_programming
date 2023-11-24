@@ -9,20 +9,23 @@ int main(void)
 	int i;
 	int j;
 
-	while (i = 0, i <= 9)
+	i = '0';
+	while (i < '9')
 	{
-		while (j = 0, j <= 9)
+		j = '0';
+		while (j <= '9')
 		{
-			if (i == j)
-				j++;
-			else
+			if (i < j)
+			{
 				putchar(i);
-			putchar(j);
-			putchar(',');
-			putchar(' ');
-			i++;
+				putchar(j);
+				if (i != '8' || (i == '8' && j != '9'))
+				putchar(',');
+				putchar(' ');
+			}
 			j++;
 		}
+		i++;
 	}
 	putchar('\n');
 	return (0);
