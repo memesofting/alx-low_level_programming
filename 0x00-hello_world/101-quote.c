@@ -2,7 +2,6 @@
 #include <string.h>
 /**
  * main - entry point
- * @i: type to return
  *
  * Return: 1 (Success)
  */
