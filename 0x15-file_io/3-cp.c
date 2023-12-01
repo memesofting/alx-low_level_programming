@@ -3,11 +3,9 @@
  * copy - copies content of a file to another
  * @file_from: file to copy
  * @file_to: destination file
- *
  * Return: 1
  */
-
-ssize_t copy(char *file_from, char *file_to)
+int copy(char *file_from, char *file_to)
 {
 	int fdf, fdt;
 	ssize_t rd, wr;
@@ -17,40 +15,44 @@ ssize_t copy(char *file_from, char *file_to)
 	fdf = open(file_from, O_RDONLY);
 	if (fdf == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	fdt = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	fdt = open(file_to, O_RDWR | O_TRUNC | O_CREAT, 0664);
 	if (fdt == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-	rd = read(fdf, str, 1024);
-	if (rd == -1)
-		return (-1);
-	wr = write(fdt, str, 1024);
-	if (wr == -1)
-		return (-1);
+	rd = 1024;
+	while (rd == 1024)
+	{
+		rd = read(fdf, str, 1024);
+		if (rd == -1)
+			return (-1);
+		wr = write(fdt, str, 1024);
+		if (wr == -1)
+			return (-1);
+	}
 	close(fdf);
 	if (!close(fdf))
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fdf);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdf);
 		exit(100);
 	}
 	close(fdt);
 	if (!close(fdt))
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fdt);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdt);
 		exit(100);
 	}
 	free(str);
-	return (0);
+	return (1);
 }
 
 #include "main.h"
 /**
- * main - check the code
+ * main - copies file(av[1]) content to another file(av[2])
  * @ac: argument count
  * @av: arguments
  *
@@ -62,10 +64,10 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: %s file_from file_to\n", av[0]);
-		exit(1);
+		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", av[0]);
+		exit(97);
 	}
 	fcp = copy(av[1], av[2]);
-	printf("-> %i)\n", fcp);
-	return (0);
+	/*printf("-> %i)\n", fcp);*/
+	return (fcp);
 }
