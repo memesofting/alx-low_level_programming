@@ -13,8 +13,17 @@ int copy(char *file_from, char *file_to)
 
 	str = malloc(sizeof(char) * 1024);
 	fdf = open(file_from, O_RDONLY);
-
+	if (fdf == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		exit(98);
+	}
 	fdt = open(file_to, O_RDWR | O_TRUNC | O_CREAT, 0664);
+	if (fdt == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+		exit(99);
+	}
 	rd = 1024;
 	while (rd == 1024)
 	{
@@ -41,27 +50,6 @@ int copy(char *file_from, char *file_to)
 	return (1);
 }
 
-#include "main.h"
-/**
- * error - handle file errors
- * @fdf: file_from file descriptor
- * @fdt: file_to file descriptor
- * @av: argument
- * Return: void
- */
-void error(int fdf, int fdt, char *av[])
-{
-	if (fdf == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
-	if (fdt == -1)
-	{
-		dprintf(2, "Error: Can't write to %s\n", av[2]);
-		exit(99);
-	}
-}
 #include "main.h"
 /**
  * main - copies file(av[1]) content to another file(av[2])
