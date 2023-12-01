@@ -1,30 +1,32 @@
 #include "main.h"
 /**
- * copy - copies content of a file to another
- * @file_from: file to copy
- * @file_to: destination file
+ * main - copies content of a file to another
+ * @ac: argument count
+ * @av: arguments
  * Return: 1
  */
-int copy(char *file_from, char *file_to)
+/*int copy(char *file_from, char *file_to)*/
+int main(int ac, char **av)
 {
 	int fdf, fdt;
 	ssize_t rd, wr;
 	char *str;
 
-	str = malloc(sizeof(char) * 1024);
-	fdf = open(file_from, O_RDONLY);
-
-	fdt = open(file_to, O_RDWR | O_TRUNC | O_CREAT, 0664);
-	rd = 1024;
-	while (rd == 1024)
+	if (ac != 3)
 	{
-		rd = read(fdf, str, 1024);
-		if (rd == -1)
-			return (-1);
-		wr = write(fdt, str, 1024);
-		if (wr == -1)
-			return (-1);
+		dprintf(2, "Usage: %s file_from file_to\n", av[0]);
+		exit(1);
 	}
+	str = malloc(sizeof(char) * 1024);
+	fdf = open(av[1], O_RDONLY);
+	fdt = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	error(fdf, fdt, av);
+	rd = read(fdf, str, 1024);
+	if (rd == -1)
+		return (-1);
+	wr = write(fdt, str, 1024);
+	if (wr == -1)
+		return (-1);
 	close(fdf);
 	if (!close(fdf))
 	{
@@ -38,7 +40,7 @@ int copy(char *file_from, char *file_to)
 		exit(100);
 	}
 	free(str);
-	return (1);
+	return (0);
 }
 
 #include "main.h"
@@ -61,25 +63,4 @@ void error(int fdf, int fdt, char *av[])
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-}
-#include "main.h"
-/**
- * main - copies file(av[1]) content to another file(av[2])
- * @ac: argument count
- * @av: arguments
- *
- * Return: Always 0.
- */
-int main(int ac, char **av)
-{
-	int fcp;
-
-	if (ac != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", av[0]);
-		exit(97);
-	}
-	fcp = copy(av[1], av[2]);
-	/*printf("-> %i)\n", fcp);*/
-	return (fcp);
 }
