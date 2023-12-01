@@ -23,18 +23,24 @@ int main(int ac, char **av)
 	error(fdf, fdt, av);
 	rd = read(fdf, str, 1024);
 	if (rd == -1)
-		return (-1);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
 	wr = write(fdt, str, 1024);
 	if (wr == -1)
-		return (-1);
+	{
+		dprintf(2, "Error: Can't write to %s\n", av[2]);
+		exit(99);
+	}
 	close(fdf);
-	if (!close(fdf))
+	if (close(fdf) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdf);
 		exit(100);
 	}
 	close(fdt);
-	if (!close(fdt))
+	if (close(fdt) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdt);
 		exit(100);
