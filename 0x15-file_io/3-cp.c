@@ -19,7 +19,7 @@ int main(int ac, char **av)
 	}
 	str = malloc(sizeof(char) * 1024);
 	fdf = open(av[1], O_RDONLY);
-	fdt = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	fdt = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	error(fdf, fdt, av);
 	rd = read(fdf, str, 1024);
 	if (rd == -1)
