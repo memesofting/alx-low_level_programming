@@ -11,37 +11,34 @@ int main(void)
 {
 	int n, fizz, buzz;
 
-	fizz = 0;
-	buzz = 0;
 	for (n = 1; n <= 100; n++)
 	{
 		fizz = n % 3;
 		buzz = n % 5;
-		if (fizz == 0)
-		{
-			printf("Fizz ");
-			n++;
-		}
-		if (buzz == 0)
-		{
-			printf("Buzz ");
-			n++;
-		}
-		if (fizz == 0 && buzz == 0)
-		{
-			printf("FizzBuzz ");
-			n++;
-		}
 		if (n == 100)
 		{
 			printf("Buzz");
 			printf("\n");
 			return (0);
 		}
-		else
+		if (fizz == 0 && buzz == 0)
 		{
-			printf("%d ", n);
+			printf("FizzBuzz ");
+			continue;
 		}
+		if (fizz == 0)
+		{
+			printf("Fizz ");
+			continue;
+		}
+		if (buzz == 0)
+		{
+			printf("Buzz ");
+			continue;
+		}
+
+		else
+			printf("%d ", n);
 	}
 	printf("\n");
 	return (0);
