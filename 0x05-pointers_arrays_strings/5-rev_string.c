@@ -7,14 +7,17 @@
  */
 void rev_string(char *s)
 {
-	char rev;
+	char *rev;
+	char a;
 	int i;
 	int len;
 
-	len = strlen(s);
-	for (i = 0; i < len; i++)
+	len = strlen(rev);
+	strdup(rev, s);
+	for (i = len; i >= 0; i--)
 	{
-		rev = s[i];
-		rev++;
+		a = rev[i];
+		/*rev++;*/
 	}
+	/*_putchar(s[len]);*/
 }
