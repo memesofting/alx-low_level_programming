@@ -12,18 +12,18 @@ int main(void)
 
 	x = 1;
 	y = 2;
-	count = 0;
+	sum = 2;
 	for (count = 0; count < 48; count++)
 	{
 		next = x + y;
-		if (next <= 4000000 && next % 2 == 0)
+		if (next % 2 == 0 && next <= 4000000)
 		{
 			sum += next;
 		}
 		x = y;
 		y = next;
 	}
-	printf("%ld", next);
+	printf("%ld", sum);
 	printf("\n");
 	return (0);
 }
