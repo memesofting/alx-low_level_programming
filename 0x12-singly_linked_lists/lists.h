@@ -16,6 +16,9 @@ typedef struct list_s
 	struct list_s *next;
 } list_t;
 #include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int _strlen(const char *s);
 int _putchar(char c);
