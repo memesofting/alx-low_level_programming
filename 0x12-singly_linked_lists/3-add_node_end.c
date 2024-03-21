@@ -24,20 +24,24 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	}
 	end->str = strdup(str);
+	while (str[n])
+	{
+		n++;
+	}
+	end->len = n;
 	end->next = NULL;
 	temp = *head;
 	if (*head == NULL)
 	{
 		*head = end;
-		n = n + 1;
+		/*n = n + 1;*/
 	}
 	else
 	{
 		while (temp->next != NULL)
 		{
-			n++;
+			temp = temp->next;
 		}
-		end->len = n;
 		temp->next = end;
 	}
 	return (end);
