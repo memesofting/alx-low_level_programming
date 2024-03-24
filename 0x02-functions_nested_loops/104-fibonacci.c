@@ -1,30 +1,29 @@
 #include <stdio.h>
 
 /**
- * main - prints first 50 fibonacci numbers starting with 1 and 2
+ * main - prints first 98 fibonacci numbers starting with 1 and 2
  *
  * Return: 0 on success
  */
 
 int main(void)
 {
-	unsigned long int x, y, count, next;
+	unsigned int x, y, count, next;
 
 	x = 1;
 	y = 2;
-	count = 0;
-	printf("%lu, %lu, ", x, y);
-	for (count = 0; count < 96; count++)
+	/*count = 2;*/
+	printf("%u, %u, ", x, y);
+	for (count = 3; count <= 98; count++)
 	{
 		next = x + y;
-		if (count == 95)
-		{
-			printf("%lu", next);
-		}
-		else
-		{
-			printf("%lu, ", next);
-		}
+		printf(", %u", next);
+		/**
+		*if (count < 98)
+		*{
+		*	printf(", ");
+		*}
+		*/
 		x = y;
 		y = next;
 	}
