@@ -8,16 +8,16 @@
 
 int main(void)
 {
-	unsigned long long x, y, count, next;
+	unsigned long x, y, count, next;
 
 	x = 1;
 	y = 2;
 	/*count = 2;*/
-	printf("%llu, %llu, ", x, y);
+	printf("%lu, %lu, ", x, y);
 	for (count = 3; count <= 98; count++)
 	{
 		next = x + y;
-		printf("%llu", next);
+		printf("%lu", next);
 		if (count < 98)
 		{
 			printf(", ");
