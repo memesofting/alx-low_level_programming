@@ -34,7 +34,7 @@ int sub(int a, int b)
 int div(int a, int b)
 {
 	if (a < 0 || b < 0)
-		return(0);
+		return (0);
 	else
 		return (a / b);
 }
