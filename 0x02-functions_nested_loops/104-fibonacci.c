@@ -17,13 +17,11 @@ int main(void)
 	for (count = 3; count <= 98; count++)
 	{
 		next = x + y;
-		printf(", %u", next);
-		/**
-		*if (count < 98)
-		*{
-		*	printf(", ");
-		*}
-		*/
+		printf("%u", next);
+		if (count < 98)
+		{
+			printf(", ");
+		}
 		x = y;
 		y = next;
 	}
