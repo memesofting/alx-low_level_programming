@@ -12,10 +12,10 @@ $(NAME): $(OBJ) m.h
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM) *~ *.swp .*.swp $(NAME)
+	RM *~ *.swp .*.swp $(NAME)
 
 oclean:
-	$(RM) $(OBJ)
+	RM $(OBJ)
 
 fclean: clean oclean
 
