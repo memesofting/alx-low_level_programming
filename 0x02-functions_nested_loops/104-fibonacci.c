@@ -12,7 +12,6 @@ int main(void)
 
 	x = 1;
 	y = 2;
-	/*count = 2;*/
 	printf("%lu, %lu, ", x, y);
 	for (count = 3; count <= 98; count++)
 	{
