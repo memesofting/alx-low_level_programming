@@ -8,26 +8,34 @@
 
 int main(void)
 {
-	unsigned long x, y, count, next;
+	unsigned long a = 1, b = 2;
+	unsigned long a_high = 0, a_low = a, b_high = 0, b_low = b;
+	unsigned long temp_high, temp_low;
+	int count;
 
-	x = 1;
-	y = 2;
-	count = 2;
-	printf("%lu, %lu, ", x, y);
-	while (count < 98)
+	printf("%lu, %lu", a, b);
+	for (count = 2; count < 98; count++)
 	{
-		next = x + y;
-		x = y;
-		y = next;
-		count++;
-		if (count == 98)
+		temp_low = a_low + b_low;
+		temp_high = a_high + b_high + (temp_low < a_low);
+
+		a_low = b_low;
+		a_high = b_high;
+		b_low = temp_low;
+		b_high = temp_high;
+
+		if (b_high > 0)
 		{
-			printf("%lu\n", next);
+			/*Handle large numbers*/
+			printf(", %lu%09lu", b_high, b_low);
 		}
 		else
 		{
-			printf("%lu, ", next);
+			printf(", %lu", b_low);
 		}
 	}
+
+	printf("\n");
 	return (0);
 }
+
